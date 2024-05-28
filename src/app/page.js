@@ -6,7 +6,7 @@ export default function Home() {
 
   useEffect(() => {
     console.log('fetching data');
-    fetch('/api/scrape')
+    fetch(process.env.URL +'/api/scrape')
       .then(response => response.json())
       .then(data => setPrice(data.price))
       .catch(error => console.error('Error fetching data:', error));
